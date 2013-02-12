@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | Notes to Self]]></title>
+  <link href="http://ciwchris.github.com/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://ciwchris.github.com/"/>
+  <updated>2013-02-11T16:31:35-08:00</updated>
+  <id>http://ciwchris.github.com/</id>
+  <author>
+    <name><![CDATA[Chris]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Reversing a file in vim]]></title>
+    <link href="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/"/>
+    <updated>2013-02-11T14:30:00-08:00</updated>
+    <id>http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim</id>
+    <content type="html"><![CDATA[<p>Digging through the Vim help docs <code>:h usr_12.txt</code> I came across the topic 'Reverse line order', <code>h 12.1</code>. Sounds interesting. The command is:</p>
+
+<p><code>vim
+:global/^/m 0
+</code>
+While familar with <code>:global</code> the rest of the command was mysterious. The documentation did a good job breaking this down. <code>^</code> will match the beginning of every line. <code>m 0</code> will <code>:move</code> the line below the line number specified; in other words move the current line to the first line of the file. Line '0' is called the 'mythical zeroth line', according to the docs. The same came be done with a range using marks:</p>
+
+<p>``` vim
+:'t+1,.g/<sup>/m</sup> 't
+````
+Here, assuming mark 't' has been set, then all lines between it and the current line will be reversed.</p>
+
+<p><code>:move</code> was also new to me, although straight forward. It's compliment, <code>:copy</code>, it also worth noting here, also defined as <code>:t</code>.</p>
+]]></content>
+  </entry>
+  
+</feed>

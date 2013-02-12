@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Notes to Self]]></title>
   <link href="http://ciwchris.github.com/atom.xml" rel="self"/>
   <link href="http://ciwchris.github.com/"/>
-  <updated>2013-02-11T13:58:08-08:00</updated>
+  <updated>2013-02-11T16:31:35-08:00</updated>
   <id>http://ciwchris.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Chris]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu phone theme on Android]]></title>
+    <link href="http://ciwchris.github.com/blog/2013/02/11/ubuntu-phone-theme-on-android/"/>
+    <updated>2013-02-11T16:18:00-08:00</updated>
+    <id>http://ciwchris.github.com/blog/2013/02/11/ubuntu-phone-theme-on-android</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Reversing a file in vim]]></title>
+    <link href="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/"/>
+    <updated>2013-02-11T14:30:00-08:00</updated>
+    <id>http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim</id>
+    <content type="html"><![CDATA[<p>Digging through the Vim help docs <code>:h usr_12.txt</code> I came across the topic &#8216;Reverse line order&#8217;, <code>h 12.1</code>. Sounds interesting. The command is:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span>global<span class="sr">/^/</span><span class="k">m</span> <span class="m">0</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>While familar with <code>:global</code> the rest of the command was mysterious. The documentation did a good job breaking this down. <code>^</code> will match the beginning of every line. <code>m 0</code> will <code>:move</code> the line below the line number specified; in other words move the current line to the first line of the file. Line &#8216;0&#8217; is called the &#8216;mythical zeroth line&#8217;, according to the docs. The same came be done with a range using marks:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="s1">&#39;t+1,.g/^/m &#39;</span><span class="k">t</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>`
+Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and the current line will be reversed.</p>
+
+<p><code>:move</code> was also new to me, although straight forward. It&#8217;s compliment, <code>:copy</code>, it also worth noting here, also defined as <code>:t</code>.</p>
+]]></content>
+  </entry>
   
 </feed>

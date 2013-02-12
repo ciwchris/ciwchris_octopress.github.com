@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Notes to Self</title>
+  <title>Reversing a file in vim - Notes to Self</title>
   <meta name="author" content="Chris">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Digging through the Vim help docs :h usr_12.txt I came across the topic &#8216;Reverse line order&#8217;, h 12.1. Sounds interesting. The command is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ciwchris.github.com/">
+  <link rel="canonical" href="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
    <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -62,51 +61,12 @@
 </nav> -->
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/11/ubuntu-phone-theme-on-android/">Ubuntu Phone Theme on Android</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-11T16:18:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/11/reversing-a-file-in-vim/">Reversing a File in Vim</a></h1>
+      <h1 class="entry-title">Reversing a File in Vim</h1>
     
     
       <p class="meta">
@@ -129,7 +89,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Digging through the Vim help docs <code>:h usr_12.txt</code> I came across the topic &#8216;Reverse line order&#8217;, <code>h 12.1</code>. Sounds interesting. The command is:</p>
+<div class="entry-content"><p>Digging through the Vim help docs <code>:h usr_12.txt</code> I came across the topic &#8216;Reverse line order&#8217;, <code>h 12.1</code>. Sounds interesting. The command is:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span>global<span class="sr">/^/</span><span class="k">m</span> <span class="m">0</span>
@@ -148,18 +108,59 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
 
 <p><code>:move</code> was also new to me, although straight forward. It&#8217;s compliment, <code>:copy</code>, it also worth noting here, also defined as <code>:t</code>.</p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Chris</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2013-02-11T14:30:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
+      
+
+<span class="categories">
   
-  <div class="pagination">
+    <a class='category' href='/blog/categories/vim/'>vim</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/" data-via="" data-counturl="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/02/11/ubuntu-phone-theme-on-android/" title="Next Post: Ubuntu phone theme on Android">Ubuntu phone theme on Android &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -184,6 +185,7 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
 
   
 </aside>
+
 
     </div>
   </div>
