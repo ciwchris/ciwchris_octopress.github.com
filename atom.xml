@@ -4,7 +4,7 @@
   <title><![CDATA[Notes to Self]]></title>
   <link href="http://ciwchris.github.com/atom.xml" rel="self"/>
   <link href="http://ciwchris.github.com/"/>
-  <updated>2013-02-11T16:31:35-08:00</updated>
+  <updated>2013-02-11T16:37:01-08:00</updated>
   <id>http://ciwchris.github.com/</id>
   <author>
     <name><![CDATA[Chris]]></name>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntu phone theme on Android]]></title>
-    <link href="http://ciwchris.github.com/blog/2013/02/11/ubuntu-phone-theme-on-android/"/>
-    <updated>2013-02-11T16:18:00-08:00</updated>
-    <id>http://ciwchris.github.com/blog/2013/02/11/ubuntu-phone-theme-on-android</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Reversing a file in vim]]></title>
