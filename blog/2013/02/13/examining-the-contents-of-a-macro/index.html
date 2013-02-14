@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Reversing a file in vim - Notes to Self</title>
+  <title>examining the contents of a macro - Notes to Self</title>
   <meta name="author" content="Chris">
 
   
-  <meta name="description" content="Digging through the Vim help docs :h usr_12.txt I came across the topic &#8216;Reverse line order&#8217;, h 12.1. Sounds interesting. The command is &hellip;">
+  <meta name="description" content="Macros are a breeze in Vim! But often I make a mistake while recording the macro, undo my change and repeat. Hopefully I get it right the next time, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/">
+  <link rel="canonical" href="http://ciwchris.github.com/blog/2013/02/13/examining-the-contents-of-a-macro/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
    <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -66,7 +66,7 @@
   
   <header>
     
-      <h1 class="entry-title">Reversing a File in Vim</h1>
+      <h1 class="entry-title">Examining the Contents of a Macro</h1>
     
     
       <p class="meta">
@@ -82,31 +82,75 @@
   
 
 
-<time datetime="2013-02-11T14:30:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
+<time datetime="2013-02-13T15:42:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Digging through the Vim help docs <code>:h usr_12.txt</code> I came across the topic &#8216;Reverse line order&#8217;, <code>h 12.1</code>. Sounds interesting. The command is:</p>
+<div class="entry-content"><p>Macros are a breeze in Vim! But often I make a mistake while recording the macro, undo my change and repeat. Hopefully I get it right the next time, but I&#8217;d rather not look at the statistics. It turns out the registers Vim stores macros in are the same set of registers used for other operations. What this means is that I can <code>put</code> the contents of the register, modify it and then <code>yank</code> it back in. Let&#8217;s say I had the following list of names:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>John Smith
+</span><span class='line'>Joe Smith
+</span><span class='line'>Bob Smith
+</span><span class='line'>Mike Smith
+</span><span class='line'>Juan Carlos
+</span><span class='line'>Jane Smith
+</span><span class='line'>Mike Jones
+</span><span class='line'>David Smith
+</span><span class='line'>Sarah Smith
+</span><span class='line'>James Smith</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And I want to swap the first name and last name. There are many ways to do this but using a macro one may write:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span>global<span class="sr">/^/</span><span class="k">m</span> <span class="m">0</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>^dwA pxj
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>While familar with <code>:global</code> the rest of the command was mysterious. The documentation did a good job breaking this down. <code>^</code> will match the beginning of every line. <code>m 0</code> will <code>:move</code> the line below the line number specified; in other words move the current line to the first line of the file. Line &#8216;0&#8217; is called the &#8216;mythical zeroth line&#8217;, according to the docs. The same came be done with a range using marks:</p>
+<p>I can read these commands into register <code>a</code> by yanking the line like so, <code>"ay$</code>. Now I can use it as a macro to swap the names, <code>10@a</code>. Voilà!</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="s1">&#39;t+1,.g/^/m &#39;</span><span class="k">t</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>Smith John
+</span><span class='line'>Smith Joe
+</span><span class='line'>Smith Bob
+</span><span class='line'>Smith Mike
+</span><span class='line'>Carlos Juan
+</span><span class='line'>Smith Jane
+</span><span class='line'>Jones Mike
+</span><span class='line'>Smith David
+</span><span class='line'>Smith Sarah
+</span><span class='line'>Smith James
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>`
-Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and the current line will be reversed.</p>
+<p>To always make this macro avaiable I can save it in my <code>.vimrc</code>.</p>
 
-<p><code>:move</code> was also new to me, although straight forward. It&#8217;s compliment, <code>:copy</code>, it also worth noting here, also defined as <code>:t</code>.</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="k">let</span> @<span class="k">a</span><span class="p">=</span><span class="s1">&#39;^dwA pxj&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -129,7 +173,7 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
   
 
 
-<time datetime="2013-02-11T14:30:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
+<time datetime="2013-02-13T15:42:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -143,7 +187,7 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/" data-via="" data-counturl="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ciwchris.github.com/blog/2013/02/13/examining-the-contents-of-a-macro/" data-via="" data-counturl="http://ciwchris.github.com/blog/2013/02/13/examining-the-contents-of-a-macro/" >Tweet</a>
   
   
   
@@ -152,8 +196,8 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/02/11/reversing-a-file-in-vim/" title="Previous Post: Reversing a file in vim">&laquo; Reversing a file in vim</a>
       
-        <a class="basic-alignment right" href="/blog/2013/02/13/examining-the-contents-of-a-macro/" title="Next Post: examining the contents of a macro">examining the contents of a macro &raquo;</a>
       
     </p>
   </footer>
