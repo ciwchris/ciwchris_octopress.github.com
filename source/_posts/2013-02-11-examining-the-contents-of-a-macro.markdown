@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "examining the contents of a macro"
-date: 2013-02-11 15:42
+date: 2013-02-13 15:42
 categories: vim
-comments: true
-published: false
+comments: false
+published: true
 ---
 
 Macros are a breeze in Vim! But often I make a mistake while recording the macro, undo my change and repeat. Hopefully I get it right the next time, but I'd rather not look at the statistics. It turns out the registers Vim stores macros in are the same set of registers used for other operations. What this means is that I can `put` the contents of the register, modify it and then `yank` it back in. Let's say I had the following list of names:
