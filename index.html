@@ -9,7 +9,8 @@
   <meta name="author" content="Chris">
 
   
-  <meta name="description" content="Macros are a breeze in Vim! But often I make a mistake while recording the macro, undo my change and repeat. Hopefully I get it right the next time, &hellip;">
+  <meta name="description" content="In the previous post I created a macro which made use of an &#8216;escape&#8217;: 1
+^dwA ^[pxj When outputting the contents of the register &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +64,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/16/entering-escape-in-insert-mode/">Entering Escape in Insert Mode</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-16T16:17:00-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In the previous post I created a macro which made use of an &#8216;escape&#8217;:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>^dwA ^[pxj
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When outputting the contents of the register containing this macro the &#8216;escape&#8217; is translated as <code>^[</code>. This shouldn&#8217;t be surpising. This format is known as <a href="http://en.wikipedia.org/wiki/Caret_notation">caret notation</a> and is used to represent non-printable control characters in ASCII. That explains the caret, but why the bracket? Interestingly, the bracket, by default, can be used as an alternative to the &#8216;escape&#8217; key in Vim, <code>h: i-ctrl-[</code>. The reason for the bracket has to do with <a href="http://en.wikipedia.org/wiki/Control_character#How_control_characters_map_to_keyboards">how control characters are mapped on keyboards</a>. As stated in the article, control characters are rendered by the ASCII value of the non-printable character plus 64. In this case the &#8216;escape&#8217; key has the <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_control_characters">ASCII value of 27</a>. Adding 64 to this value gives us the decimal value of 91, which is <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">represented by the bracket, &#8216;[&#8217;</a>. And that is why the &#8216;escape&#8217; was rendered as <code>^[</code> in the macro. <code>h: key-notation</code> contains a table detailing how many non-printable characters can be rendered in Vim.</p>
+
+<p>The follow up question to this would be, &#8220;if I were to create the macro myself how would I type <code>^[</code>?&#8221; If the caret key was literally used then it would instruct Vim to move to the &#8220;first non-blank character of the line&#8221;, <code>:h ^</code>. Not our desired outcome. To type an &#8216;escape&#8217; it is necessary to use &#8216;ctrl-v&#8217;, which will &#8220;insert next non-digit literally&#8221;, <code>:h i_ctrl-v</code>. So to use an &#8216;escape&#8217; in a macro being created manually type: &#8216;ctrl-v&#8217; followed by &#8216;escape&#8217;.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -225,6 +271,10 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/16/entering-escape-in-insert-mode/">Entering escape in insert mode</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/13/examining-the-contents-of-a-macro/">examining the contents of a macro</a>

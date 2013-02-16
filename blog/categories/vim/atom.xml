@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | Notes to Self]]></title>
   <link href="http://ciwchris.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://ciwchris.github.com/"/>
-  <updated>2013-02-13T21:34:56-08:00</updated>
+  <updated>2013-02-16T12:26:19-08:00</updated>
   <id>http://ciwchris.github.com/</id>
   <author>
     <name><![CDATA[Chris]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Entering escape in insert mode]]></title>
+    <link href="http://ciwchris.github.com/blog/2013/02/16/entering-escape-in-insert-mode/"/>
+    <updated>2013-02-16T16:17:00-08:00</updated>
+    <id>http://ciwchris.github.com/blog/2013/02/16/entering-escape-in-insert-mode</id>
+    <content type="html"><![CDATA[<p>In the previous post I created a macro which made use of an 'escape':</p>
+
+<p><code>vim
+^dwA ^[pxj
+</code>
+When outputting the contents of the register containing this macro the 'escape' is translated as <code>^[</code>. This shouldn't be surpising. This format is known as <a href="http://en.wikipedia.org/wiki/Caret_notation">caret notation</a> and is used to represent non-printable control characters in ASCII. That explains the caret, but why the bracket? Interestingly, the bracket, by default, can be used as an alternative to the 'escape' key in Vim, <code>h: i-ctrl-[</code>. The reason for the bracket has to do with <a href="http://en.wikipedia.org/wiki/Control_character#How_control_characters_map_to_keyboards">how control characters are mapped on keyboards</a>. As stated in the article, control characters are rendered by the ASCII value of the non-printable character plus 64. In this case the 'escape' key has the <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_control_characters">ASCII value of 27</a>. Adding 64 to this value gives us the decimal value of 91, which is <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">represented by the bracket, '['</a>. And that is why the 'escape' was rendered as <code>^[</code> in the macro. <code>h: key-notation</code> contains a table detailing how many non-printable characters can be rendered in Vim.</p>
+
+<p>The follow up question to this would be, "if I were to create the macro myself how would I type <code>^[</code>?" If the caret key was literally used then it would instruct Vim to move to the "first non-blank character of the line", <code>:h ^</code>. Not our desired outcome. To type an 'escape' it is necessary to use 'ctrl-v', which will "insert next non-digit literally", <code>:h i_ctrl-v</code>. So to use an 'escape' in a macro being created manually type: 'ctrl-v' followed by 'escape'.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[examining the contents of a macro]]></title>
