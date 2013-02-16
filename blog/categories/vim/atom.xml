@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | Notes to Self]]></title>
   <link href="http://ciwchris.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://ciwchris.github.com/"/>
-  <updated>2013-02-16T12:26:19-08:00</updated>
+  <updated>2013-02-16T12:32:42-08:00</updated>
   <id>http://ciwchris.github.com/</id>
   <author>
     <name><![CDATA[Chris]]></name>
@@ -51,7 +51,7 @@ James Smith
 And I want to swap the first name and last name. There are many ways to do this but using a macro one may write:</p>
 
 <p><code>vim
-^dwA pxj
+^dwA ^[pxj
 </code></p>
 
 <p>I can read these commands into register <code>a</code> by yanking the line like so, <code>"ay$</code>. Now I can use it as a macro to swap the names, <code>10@a</code>. Voilà!</p>
@@ -72,7 +72,7 @@ Smith James
 <p>To always make this macro avaiable I can save it in my <code>.vimrc</code>.</p>
 
 <p><code>vim
-let @a='^dwA pxj'
+let @a='^dwA ^[pxj'
 </code></p>
 ]]></content>
   </entry>
