@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: craftsmanship | Notes to Self]]></title>
+  <link href="http://ciwchris.github.com/blog/categories/craftsmanship/atom.xml" rel="self"/>
+  <link href="http://ciwchris.github.com/"/>
+  <updated>2013-02-25T21:56:04-08:00</updated>
+  <id>http://ciwchris.github.com/</id>
+  <author>
+    <name><![CDATA[Chris]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Reasonable Expectations of Your CTO]]></title>
+    <link href="http://ciwchris.github.com/blog/2013/02/25/the-reasonable-expectations-of-your-cto/"/>
+    <updated>2013-02-25T21:11:00-08:00</updated>
+    <id>http://ciwchris.github.com/blog/2013/02/25/the-reasonable-expectations-of-your-cto</id>
+    <content type="html"><![CDATA[<p>Notes from the presentation "The Reasonable Expectations of Your CTO" given by Uncle Bob: <a href="http://vimeo.com/56708193">Demanding Professionalism: Uncle Bob @ Philly .NET User Group</a>. The talk begins approximately 21 minutes in.</p>
+
+<h3>Reasonable Expectations</h3>
+
+<ul>
+<li><strong>Don't ship junk:</strong> "But we had to make a mess to make the deadline." This is a bad trade off. Take the time, it will keep you going fast later.</li>
+<li><strong>Always be ready to ship:</strong> Not all the features may be complete, but it is a business decision to ship it or not. We should always be ready, at any moment.</li>
+<li><strong>Stable Productivity:</strong> It's easy to start a project fast. Inevitably you start slowing down more and more. Start and continue well.</li>
+<li><strong>Inexpensive adaptibilty:</strong> A change in requirements should be cheap. It's called <em>soft</em>ware for a reason.</li>
+<li><strong>Continous improvement:</strong> Code should be left better. Could should not be left to rot.</li>
+<li><strong>Fearless competence:</strong> Should not be afraid to change the code.</li>
+<li><strong>Extereme quality:</strong> Should feel good about the work we did. This should be our first motivation.</li>
+<li><strong>Will not dump on QA:</strong> QA should not find anything. Should be considered a failure if they do.</li>
+<li><strong>Automation:</strong> QA shouldn't have to spend a day verifying everything in the application. Automation can perform this task.</li>
+<li><strong>Nothing fragile:</strong> Shouldn't be afraid to touch something because you might break it.</li>
+<li><strong>Cover for each other:</strong> Someone else should know what you know. If you are gone someone else should be able to perform your tasks.</li>
+<li><strong>Honest estimates:</strong> Accurate versus precise. Don't say you can do something when you know you can't.</li>
+<li><strong>Say "No":</strong> When it's wrong you need to say so.</li>
+<li><strong>Continuous agressive learning:</strong> Need to be at the front of change. We are responsible for our career.</li>
+<li><strong>Teaching:</strong> We don't train new developers how to be developers. We leave them on their own. Teaching also helps us learn.</li>
+</ul>
+
+
+<h3>Questions</h3>
+
+<ul>
+<li>Are any of the expectations, by themselves, unreasonable?</li>
+<li>Any of these expectations standout? Any you felt more passionate about?</li>
+<li>Were any of the comments made, while unpacking the expectations, unreasonable?</li>
+<li>How well do we meet each expectation?</li>
+<li>For those expectations we are weak can we rank in priority order and then, beginning at the highest, make a change to improve our ability to meet the expectation?</li>
+</ul>
+
+
+<p>Robbie Clutton posted similar notes on this presentation which are worth viewing: <a href="http://pivotallabs.com/uncle-bob-agile-testing-and-bdd/">Agile Testing and BDD</a>.</p>
+
+<p>Relatedly, Bevan's post on <a href="http://www.nichesoftware.co.nz/blog/2013-01/607/secret-awesome-software">"The secret to Awesome software"</a> is well worth a read.</p>
+]]></content>
+  </entry>
+  
+</feed>
