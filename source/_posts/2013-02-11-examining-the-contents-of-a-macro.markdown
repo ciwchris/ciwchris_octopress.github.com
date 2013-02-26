@@ -24,7 +24,7 @@ James Smith
 And I want to swap the first name and last name. There are many ways to do this but using a macro one may write:
 
 ``` vim
-^dwA pxj
+^dwA ^[pxj
 ```
 
 I can read these commands into register `a` by yanking the line like so, `"ay$`. Now I can use it as a macro to swap the names, `10@a`. Voilà!
@@ -45,5 +45,5 @@ Smith James
 To always make this macro avaiable I can save it in my `.vimrc`.
 
 ``` vim
-let @a='^dwA pxj'
+let @a='^dwA ^[pxj'
 ```
