@@ -14,17 +14,17 @@ Notes from the presentation "The Reasonable Expectations of Your CTO" given by U
 - **Don't ship junk:** "But we had to make a mess to make the deadline." This is a bad trade off. Take the time, it will keep you going fast later.
 - **Always be ready to ship:** Not all the features may be complete, but it is a business decision to ship it or not. We should always be ready, at any moment.
 - **Stable Productivity:** It's easy to start a project fast. Inevitably you start slowing down more and more. Start and continue well.
-- **Inexpensive adaptibilty:** A change in requirements should be cheap. It's called *soft*ware for a reason.
-- **Continous improvement:** Code should be left better. Could should not be left to rot.
+- **Inexpensive adaptability:** A change in requirements should be cheap. It's called *soft*ware for a reason.
+- **Continuous improvement:** Code should be left better. Could should not be left to rot.
 - **Fearless competence:** Should not be afraid to change the code.
-- **Extereme quality:** Should feel good about the work we did. This should be our first motivation.
+- **Extreme quality:** Should feel good about the work we did. This should be our first motivation.
 - **Will not dump on QA:** QA should not find anything. Should be considered a failure if they do.
 - **Automation:** QA shouldn't have to spend a day verifying everything in the application. Automation can perform this task.
 - **Nothing fragile:** Shouldn't be afraid to touch something because you might break it.
 - **Cover for each other:** Someone else should know what you know. If you are gone someone else should be able to perform your tasks.
 - **Honest estimates:** Accurate versus precise. Don't say you can do something when you know you can't.
 - **Say "No":** When it's wrong you need to say so.
-- **Continuous agressive learning:** Need to be at the front of change. We are responsible for our career.
+- **Continuous aggressive learning:** Need to be at the front of change. We are responsible for our career.
 - **Teaching:** We don't train new developers how to be developers. We leave them on their own. Teaching also helps us learn.
 
 ### Questions ###
