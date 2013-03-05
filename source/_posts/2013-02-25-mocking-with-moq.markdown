@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Mocking With Moq"
-date: 2013-02-25 13:29
+date: 2013-03-04 21:29
 comments: false
 categories: c# mocking tests
-published: false
+published: true
 ---
 
 Notes for the pluralsight course [Mocking With Moq](http://pluralsight.com/training/Courses/TableOfContents/mocking-with-moq).
