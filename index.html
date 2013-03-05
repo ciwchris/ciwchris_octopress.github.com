@@ -9,7 +9,9 @@
   <meta name="author" content="Chris">
 
   
-  <meta name="description" content="Notes from the presentation &#8220;The Reasonable Expectations of Your CTO&#8221; given by Uncle Bob: Demanding Professionalism: Uncle Bob @ Philly . &hellip;">
+  <meta name="description" content="Notes for the pluralsight course Mocking With Moq. Unit tests should be Atomic: one small thing
+Deterministic: pass or fail
+Repeatable: shouldn&#8217 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/25/the-reasonable-expectations-of-your-cto/">The Reasonable Expectations of Your CTO</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/03/04/mocking-with-moq/">Mocking With Moq</a></h1>
     
     
       <p class="meta">
@@ -85,79 +87,7 @@
   
 
 
-<time datetime="2013-02-25T21:11:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Notes from the presentation &#8220;The Reasonable Expectations of Your CTO&#8221; given by Uncle Bob: <a href="http://vimeo.com/56708193">Demanding Professionalism: Uncle Bob @ Philly .NET User Group</a>. The talk begins approximately 21 minutes in.</p>
-
-<h3>Reasonable Expectations</h3>
-
-<ul>
-<li><strong>Don&#8217;t ship junk:</strong> &#8220;But we had to make a mess to make the deadline.&#8221; This is a bad trade off. Take the time, it will keep you going fast later.</li>
-<li><strong>Always be ready to ship:</strong> Not all the features may be complete, but it is a business decision to ship it or not. We should always be ready, at any moment.</li>
-<li><strong>Stable Productivity:</strong> It&#8217;s easy to start a project fast. Inevitably you start slowing down more and more. Start and continue well.</li>
-<li><strong>Inexpensive adaptability:</strong> A change in requirements should be cheap. It&#8217;s called <em>soft</em>ware for a reason.</li>
-<li><strong>Continuous improvement:</strong> Code should be left better. Could should not be left to rot.</li>
-<li><strong>Fearless competence:</strong> Should not be afraid to change the code.</li>
-<li><strong>Extreme quality:</strong> Should feel good about the work we did. This should be our first motivation.</li>
-<li><strong>Will not dump on QA:</strong> QA should not find anything. Should be considered a failure if they do.</li>
-<li><strong>Automation:</strong> QA shouldn&#8217;t have to spend a day verifying everything in the application. Automation can perform this task.</li>
-<li><strong>Nothing fragile:</strong> Shouldn&#8217;t be afraid to touch something because you might break it.</li>
-<li><strong>Cover for each other:</strong> Someone else should know what you know. If you are gone someone else should be able to perform your tasks.</li>
-<li><strong>Honest estimates:</strong> Accurate versus precise. Don&#8217;t say you can do something when you know you can&#8217;t.</li>
-<li><strong>Say &#8220;No&#8221;:</strong> When it&#8217;s wrong you need to say so.</li>
-<li><strong>Continuous aggressive learning:</strong> Need to be at the front of change. We are responsible for our career.</li>
-<li><strong>Teaching:</strong> We don&#8217;t train new developers how to be developers. We leave them on their own. Teaching also helps us learn.</li>
-</ul>
-
-
-<h3>Questions</h3>
-
-<ul>
-<li>Are any of the expectations, by themselves, unreasonable?</li>
-<li>Any of these expectations standout? Any you felt more passionate about?</li>
-<li>Were any of the comments made, while unpacking the expectations, unreasonable?</li>
-<li>How well do we meet each expectation?</li>
-<li>For those expectations we are weak can we rank in priority order and then, beginning at the highest, make a change to improve our ability to meet the expectation?</li>
-</ul>
-
-
-<p>Robbie Clutton posted similar notes on this presentation which are worth viewing: <a href="http://pivotallabs.com/uncle-bob-agile-testing-and-bdd/">Agile Testing and BDD</a>.</p>
-
-<p>Relatedly, Bevan&#8217;s post on <a href="http://www.nichesoftware.co.nz/blog/2013-01/607/secret-awesome-software">&#8220;The secret to Awesome software&#8221;</a> is well worth a read.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/25/mocking-with-moq/">Mocking With Moq</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-25T13:29:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+<time datetime="2013-03-04T21:29:00-08:00" pubdate data-updated="true">Mar 4<span>th</span>, 2013</time>
         
       </p>
     
@@ -501,6 +431,78 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/02/25/the-reasonable-expectations-of-your-cto/">The Reasonable Expectations of Your CTO</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-25T21:11:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Notes from the presentation &#8220;The Reasonable Expectations of Your CTO&#8221; given by Uncle Bob: <a href="http://vimeo.com/56708193">Demanding Professionalism: Uncle Bob @ Philly .NET User Group</a>. The talk begins approximately 21 minutes in.</p>
+
+<h3>Reasonable Expectations</h3>
+
+<ul>
+<li><strong>Don&#8217;t ship junk:</strong> &#8220;But we had to make a mess to make the deadline.&#8221; This is a bad trade off. Take the time, it will keep you going fast later.</li>
+<li><strong>Always be ready to ship:</strong> Not all the features may be complete, but it is a business decision to ship it or not. We should always be ready, at any moment.</li>
+<li><strong>Stable Productivity:</strong> It&#8217;s easy to start a project fast. Inevitably you start slowing down more and more. Start and continue well.</li>
+<li><strong>Inexpensive adaptability:</strong> A change in requirements should be cheap. It&#8217;s called <em>soft</em>ware for a reason.</li>
+<li><strong>Continuous improvement:</strong> Code should be left better. Could should not be left to rot.</li>
+<li><strong>Fearless competence:</strong> Should not be afraid to change the code.</li>
+<li><strong>Extreme quality:</strong> Should feel good about the work we did. This should be our first motivation.</li>
+<li><strong>Will not dump on QA:</strong> QA should not find anything. Should be considered a failure if they do.</li>
+<li><strong>Automation:</strong> QA shouldn&#8217;t have to spend a day verifying everything in the application. Automation can perform this task.</li>
+<li><strong>Nothing fragile:</strong> Shouldn&#8217;t be afraid to touch something because you might break it.</li>
+<li><strong>Cover for each other:</strong> Someone else should know what you know. If you are gone someone else should be able to perform your tasks.</li>
+<li><strong>Honest estimates:</strong> Accurate versus precise. Don&#8217;t say you can do something when you know you can&#8217;t.</li>
+<li><strong>Say &#8220;No&#8221;:</strong> When it&#8217;s wrong you need to say so.</li>
+<li><strong>Continuous aggressive learning:</strong> Need to be at the front of change. We are responsible for our career.</li>
+<li><strong>Teaching:</strong> We don&#8217;t train new developers how to be developers. We leave them on their own. Teaching also helps us learn.</li>
+</ul>
+
+
+<h3>Questions</h3>
+
+<ul>
+<li>Are any of the expectations, by themselves, unreasonable?</li>
+<li>Any of these expectations standout? Any you felt more passionate about?</li>
+<li>Were any of the comments made, while unpacking the expectations, unreasonable?</li>
+<li>How well do we meet each expectation?</li>
+<li>For those expectations we are weak can we rank in priority order and then, beginning at the highest, make a change to improve our ability to meet the expectation?</li>
+</ul>
+
+
+<p>Robbie Clutton posted similar notes on this presentation which are worth viewing: <a href="http://pivotallabs.com/uncle-bob-agile-testing-and-bdd/">Agile Testing and BDD</a>.</p>
+
+<p>Relatedly, Bevan&#8217;s post on <a href="http://www.nichesoftware.co.nz/blog/2013-01/607/secret-awesome-software">&#8220;The secret to Awesome software&#8221;</a> is well worth a read.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/02/16/entering-escape-in-insert-mode/">Entering Escape in Insert Mode</a></h1>
     
     
@@ -704,11 +706,11 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/02/25/the-reasonable-expectations-of-your-cto/">The Reasonable Expectations of Your CTO</a>
+        <a href="/blog/2013/03/04/mocking-with-moq/">Mocking With Moq</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/25/mocking-with-moq/">Mocking With Moq</a>
+        <a href="/blog/2013/02/25/the-reasonable-expectations-of-your-cto/">The Reasonable Expectations of Your CTO</a>
       </li>
     
       <li class="post">

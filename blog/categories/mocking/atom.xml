@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mocking | Notes to Self]]></title>
   <link href="http://ciwchris.github.com/blog/categories/mocking/atom.xml" rel="self"/>
   <link href="http://ciwchris.github.com/"/>
-  <updated>2013-03-04T21:46:25-08:00</updated>
+  <updated>2013-03-04T21:49:20-08:00</updated>
   <id>http://ciwchris.github.com/</id>
   <author>
     <name><![CDATA[Chris]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mocking With Moq]]></title>
-    <link href="http://ciwchris.github.com/blog/2013/02/25/mocking-with-moq/"/>
-    <updated>2013-02-25T13:29:00-08:00</updated>
-    <id>http://ciwchris.github.com/blog/2013/02/25/mocking-with-moq</id>
+    <link href="http://ciwchris.github.com/blog/2013/03/04/mocking-with-moq/"/>
+    <updated>2013-03-04T21:29:00-08:00</updated>
+    <id>http://ciwchris.github.com/blog/2013/03/04/mocking-with-moq</id>
     <content type="html"><![CDATA[<p>Notes for the pluralsight course <a href="http://pluralsight.com/training/Courses/TableOfContents/mocking-with-moq">Mocking With Moq</a>.</p>
 
 <h3>Unit tests should be</h3>
