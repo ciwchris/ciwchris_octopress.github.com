@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tests | Notes to Self]]></title>
+  <link href="http://ciwchris.github.com/blog/categories/tests/atom.xml" rel="self"/>
+  <link href="http://ciwchris.github.com/"/>
+  <updated>2013-03-04T21:46:25-08:00</updated>
+  <id>http://ciwchris.github.com/</id>
+  <author>
+    <name><![CDATA[Chris]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mocking With Moq]]></title>
+    <link href="http://ciwchris.github.com/blog/2013/02/25/mocking-with-moq/"/>
+    <updated>2013-02-25T13:29:00-08:00</updated>
+    <id>http://ciwchris.github.com/blog/2013/02/25/mocking-with-moq</id>
+    <content type="html"><![CDATA[<p>Notes for the pluralsight course <a href="http://pluralsight.com/training/Courses/TableOfContents/mocking-with-moq">Mocking With Moq</a>.</p>
+
+<h3>Unit tests should be</h3>
+
+<ul>
+<li><strong>Atomic:</strong> one small thing</li>
+<li><strong>Deterministic:</strong> pass or fail</li>
+<li><strong>Repeatable:</strong> shouldn't start failing if no code has changed</li>
+<li><strong>Isolated and order independent:</strong> nothing should affect it</li>
+<li><strong>Fast:</strong> milliseconds</li>
+<li><strong>Easy to setup:</strong> shouldn't take a lot of coding</li>
+</ul>
+
+
+<h3>Samples</h3>
+
+<p>``` c# Verify a method is called
+mockRepository.Setup(x => x.Save(It.IsAny<Customer>()));</p>
+
+<p>mockRepository.VerifyAll();
+```</p>
+
+<p>``` c# Verify a method was called n times
+mockCustomerRepository.Verify(x=>x.Save(It.IsAny<Customer>()),</p>
+
+<pre><code>Times.Exactly(2));
+</code></pre>
+
+<p>```</p>
+
+<p>``` c# Mock return a value
+mockAddressBuilder</p>
+
+<pre><code>.Setup(x =&gt; x.From(It.IsAny&lt;CustomerToCreateDto&gt;()))
+.Returns(() =&gt; new Address());
+</code></pre>
+
+<p>mockCustomerRepository.Verify(y=>y.Save(It.IsAny<Customer>()));
+```</p>
+
+<p>``` c# Using an out parameter
+mockMailingAddressFactory</p>
+
+<pre><code>.Setup(x =&gt; x.TryParse(It.IsAny&lt;string&gt;(), out mailingAddress))
+.Returns(true);
+</code></pre>
+
+<p>mockCustomerRepository.Verify(x=>x.Save(It.IsAny<Customer>()));
+```</p>
+
+<p>``` c# Change the return value after each call to the mocked member
+mockIdFactory.Setup(x => x.Create())</p>
+
+<pre><code>.Returns(() =&gt; i)
+.Callback(() =&gt; i++);
+</code></pre>
+
+<p>mockIdFactory.Verify(x => x.Create(), Times.AtLeastOnce());
+```</p>
+
+<p>``` c# Verify the arguments passed to the mocked method are as expected
+mockFullNameBuilder.Setup(</p>
+
+<pre><code>x =&gt; x.From(It.IsAny&lt;string&gt;(), It.IsAny&lt;string&gt;()));
+</code></pre>
+
+<p>mockFullNameBuilder.Verify(x=>x.From(</p>
+
+<pre><code>It.Is&lt;string&gt;(
+    fn=&gt;fn.Equals(customerToCreateDto.FirstName,
+        StringComparison.InvariantCultureIgnoreCase)),
+It.Is&lt;string&gt;(
+    fn=&gt;fn.Equals(customerToCreateDto.LastName,
+        StringComparison.InvariantCultureIgnoreCase))));
+</code></pre>
+
+<p>```</p>
+
+<p>``` c# Conditionally return a value, control code flow
+mockCustomerStatusFactory.Setup(</p>
+
+<pre><code>x =&gt; x.CreateFrom(
+    It.Is&lt;CustomerToCreateDto&gt;(
+        y =&gt; y.DesiredStatus == CustomerStatus.Platinum)))
+.Returns(CustomerStatus.Platinum);
+</code></pre>
+
+<p>mockCustomerRepository.Verify(</p>
+
+<pre><code>x=&gt;x.SaveSpecial(It.IsAny&lt;Customer&gt;()));
+</code></pre>
+
+<p>```</p>
+
+<p>``` c# Throw an exception
+mockCustomerAddressFactory</p>
+
+<pre><code>.Setup(x =&gt; x.From(It.IsAny&lt;CustomerToCreateDto&gt;()))
+.Throws&lt;InvalidCustomerAddressException&gt;();
+</code></pre>
+
+<p>```</p>
+
+<p>``` c# Verify a setter has been set
+mockCustomerRepository.VerifySet(</p>
+
+<pre><code>x=&gt;x.LocalTimeZone = It.IsAny&lt;string&gt;());
+</code></pre>
+
+<p>```</p>
+
+<p>``` c# Verify a getter has been called
+mockApplicationSettings.Setup(x => x.WorkstationId).Returns(123);</p>
+
+<p>mockApplicationSettings.VerifyGet(x=>x.WorkstationId);
+```
+For nested objects you don't have to mock each object; Moq will automatically return a mocked object if it can.</p>
+
+<p>``` c# Recursive/nested properties, Moq realizes each is mockable and so will return a mock for each
+mockApplicationSettings.Setup(</p>
+
+<pre><code>x =&gt; x.SystemConfiguration.AuditingInformation.WorkstationId)
+.Returns(123);
+</code></pre>
+
+<p>mockApplicationSettings.VerifyGet(</p>
+
+<pre><code>x =&gt; x.SystemConfiguration.AuditingInformation.WorkstationId);
+</code></pre>
+
+<p>```</p>
+
+<p>``` c# Stub a property
+mockApplicationSettings.SetupProperty(x => x.WorkstationId, 1234);</p>
+
+<p>mockApplicationSettings.VerifyGet(x=>x.WorkstationId);
+```</p>
+
+<p>``` c# Stub all properties
+mockApplicationSettings.SetupAllProperties();
+mockApplicationSettings.Object.WorkstationId = 2345;</p>
+
+<p>mockApplicationSettings.VerifyGet(x=>x.WorkstationId);
+```</p>
+
+<p>``` c# Event
+mockCustomerRepository.Raise(</p>
+
+<pre><code>x=&gt;x.NotifySalesTeam += null,
+new NotifySalesTeamEventArgs("jim"));
+</code></pre>
+
+<p>mockMailingRepository.Verify(</p>
+
+<pre><code>x =&gt; x.NewCustomerMessage(It.IsAny&lt;string&gt;()));
+</code></pre>
+
+<p>```</p>
+
+<p>``` c# Custom event
+mockCustomerRepository.Raise(</p>
+
+<pre><code>x=&gt;x.NotifySalesTeam += null,
+"jim", false);
+</code></pre>
+
+<p>mockMailingRepository.Verify(</p>
+
+<pre><code>x =&gt; x.NewCustomerMessage(It.IsAny&lt;string&gt;()));
+</code></pre>
+
+<p>```</p>
+
+<p>Two types of mocks:</p>
+
+<ol>
+<li><strong>Loose:</strong> if the object doesn't have any expectations set it will return the default value for the object. It will not throw an exception when verify is called. This is the default behavior for Moq</li>
+<li><strong>Strict:</strong> exception will be thrown if the object hasn't been explicitly setup.</li>
+</ol>
+
+
+<p>``` c# Strict mock behavior
+var mockCustomerRepository =</p>
+
+<pre><code>new Mock&lt;ICustomerRepository&gt;(MockBehavior.Strict);
+</code></pre>
+
+<p>mockCustomerRepository.Setup(x => x.Save(It.IsAny<Customer>()));</p>
+
+<p>mockCustomerRepository.Verify();
+```</p>
+
+<p><strong>Partial mock:</strong> allows invocation of a base class implementation</p>
+
+<p>``` c# Mock the SUT when working with a base class
+mockNameFormatter.Object.From(new Customer("Bob", "SAPBuilder"));</p>
+
+<p>mockNameFormatter.Verify(</p>
+
+<pre><code>x=&gt;x.ParseBadWordsFrom(It.IsAny&lt;string&gt;()),
+Times.Exactly(2));
+</code></pre>
+
+<p>```</p>
+
+<p><strong>Recursive:</strong> Set the defaul value of a mock to return a mocked object, 'DefaultValue = DefaultValue.Mock<code>, instead of the object's default value, this only works if  the object is mockable. Then use</code>Mock.Get()` to retrieve the actual mock which can then be used like any other mocked object</p>
+
+<p>``` c# Recursive mock
+var mockAddressFormatterFactory =</p>
+
+<pre><code>new Mock&lt;IAddressFormatterFactory&gt; 
+    {DefaultValue = DefaultValue.Mock};
+</code></pre>
+
+<p>var addressFormatter = mockAddressFormatterFactory</p>
+
+<pre><code>.Object.From(It.IsAny&lt;string&gt;());
+</code></pre>
+
+<p>var mock = Mock.Get(addressFormatter);</p>
+
+<p>mock.Verify(x=>x.From(It.IsAny<CustomerToCreateDto>()));
+```
+Use a mock factory when working with lots of dependencies. This centralizes the creation and verification of all mock objects.</p>
+
+<p>``` c# Mock factory
+var mockFactory = new MockRepository(MockBehavior.Loose)</p>
+
+<pre><code>            {DefaultValue = DefaultValue.Mock};
+</code></pre>
+
+<p>var mockCustomerRepository =</p>
+
+<pre><code>mockFactory.Create&lt;ICustomerRepository&gt;();
+</code></pre>
+
+<p>var mockCustomerAddressFormatter =</p>
+
+<pre><code>mockFactory.Create&lt;ICustomerAddressFormatter&gt;();
+</code></pre>
+
+<p>mockFactory.Verify();
+```</p>
+
+<p>When mocking protected members the member must be marked as virtual. You lose intellisense, method name must appear in a string. Must use <code>ItExpr</code> instead of <code>It</code>.</p>
+
+<p>``` c# Protected members
+mockCustomerNameFormatter.Protected()</p>
+
+<pre><code>.Setup&lt;string&gt;("ParseBadWordsFrom", ItExpr.IsAny&lt;string&gt;())
+.Returns("asdf")
+.Verifiable();
+</code></pre>
+
+<p>mockCustomerNameFormatter.Verify();
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

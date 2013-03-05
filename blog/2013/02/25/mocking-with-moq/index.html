@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Notes to Self</title>
+  <title>Mocking With Moq - Notes to Self</title>
   <meta name="author" content="Chris">
 
   
-  <meta name="description" content="Notes from the presentation &#8220;The Reasonable Expectations of Your CTO&#8221; given by Uncle Bob: Demanding Professionalism: Uncle Bob @ Philly . &hellip;">
+  <meta name="description" content="Notes for the pluralsight course Mocking With Moq. Unit tests should be Atomic: one small thing
+Deterministic: pass or fail
+Repeatable: shouldn&#8217 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ciwchris.github.com/">
+  <link rel="canonical" href="http://ciwchris.github.com/blog/2013/02/25/mocking-with-moq/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
    <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -61,87 +63,12 @@
 </nav> -->
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/25/the-reasonable-expectations-of-your-cto/">The Reasonable Expectations of Your CTO</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-25T21:11:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Notes from the presentation &#8220;The Reasonable Expectations of Your CTO&#8221; given by Uncle Bob: <a href="http://vimeo.com/56708193">Demanding Professionalism: Uncle Bob @ Philly .NET User Group</a>. The talk begins approximately 21 minutes in.</p>
-
-<h3>Reasonable Expectations</h3>
-
-<ul>
-<li><strong>Don&#8217;t ship junk:</strong> &#8220;But we had to make a mess to make the deadline.&#8221; This is a bad trade off. Take the time, it will keep you going fast later.</li>
-<li><strong>Always be ready to ship:</strong> Not all the features may be complete, but it is a business decision to ship it or not. We should always be ready, at any moment.</li>
-<li><strong>Stable Productivity:</strong> It&#8217;s easy to start a project fast. Inevitably you start slowing down more and more. Start and continue well.</li>
-<li><strong>Inexpensive adaptability:</strong> A change in requirements should be cheap. It&#8217;s called <em>soft</em>ware for a reason.</li>
-<li><strong>Continuous improvement:</strong> Code should be left better. Could should not be left to rot.</li>
-<li><strong>Fearless competence:</strong> Should not be afraid to change the code.</li>
-<li><strong>Extreme quality:</strong> Should feel good about the work we did. This should be our first motivation.</li>
-<li><strong>Will not dump on QA:</strong> QA should not find anything. Should be considered a failure if they do.</li>
-<li><strong>Automation:</strong> QA shouldn&#8217;t have to spend a day verifying everything in the application. Automation can perform this task.</li>
-<li><strong>Nothing fragile:</strong> Shouldn&#8217;t be afraid to touch something because you might break it.</li>
-<li><strong>Cover for each other:</strong> Someone else should know what you know. If you are gone someone else should be able to perform your tasks.</li>
-<li><strong>Honest estimates:</strong> Accurate versus precise. Don&#8217;t say you can do something when you know you can&#8217;t.</li>
-<li><strong>Say &#8220;No&#8221;:</strong> When it&#8217;s wrong you need to say so.</li>
-<li><strong>Continuous aggressive learning:</strong> Need to be at the front of change. We are responsible for our career.</li>
-<li><strong>Teaching:</strong> We don&#8217;t train new developers how to be developers. We leave them on their own. Teaching also helps us learn.</li>
-</ul>
-
-
-<h3>Questions</h3>
-
-<ul>
-<li>Are any of the expectations, by themselves, unreasonable?</li>
-<li>Any of these expectations standout? Any you felt more passionate about?</li>
-<li>Were any of the comments made, while unpacking the expectations, unreasonable?</li>
-<li>How well do we meet each expectation?</li>
-<li>For those expectations we are weak can we rank in priority order and then, beginning at the highest, make a change to improve our ability to meet the expectation?</li>
-</ul>
-
-
-<p>Robbie Clutton posted similar notes on this presentation which are worth viewing: <a href="http://pivotallabs.com/uncle-bob-agile-testing-and-bdd/">Agile Testing and BDD</a>.</p>
-
-<p>Relatedly, Bevan&#8217;s post on <a href="http://www.nichesoftware.co.nz/blog/2013-01/607/secret-awesome-software">&#8220;The secret to Awesome software&#8221;</a> is well worth a read.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/25/mocking-with-moq/">Mocking With Moq</a></h1>
+      <h1 class="entry-title">Mocking With Moq</h1>
     
     
       <p class="meta">
@@ -164,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Notes for the pluralsight course <a href="http://pluralsight.com/training/Courses/TableOfContents/mocking-with-moq">Mocking With Moq</a>.</p>
+<div class="entry-content"><p>Notes for the pluralsight course <a href="http://pluralsight.com/training/Courses/TableOfContents/mocking-with-moq">Mocking With Moq</a>.</p>
 
 <h3>Unit tests should be</h3>
 
@@ -490,67 +417,16 @@
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/16/entering-escape-in-insert-mode/">Entering Escape in Insert Mode</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Chris</span></span>
 
-<time datetime="2013-02-16T16:17:00-08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In the previous post I created a macro which made use of an &#8216;escape&#8217;:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'>^dwA ^[pxj
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>When outputting the contents of the register containing this macro the &#8216;escape&#8217; is translated as <code>^[</code>. This shouldn&#8217;t be surpising. This format is known as <a href="http://en.wikipedia.org/wiki/Caret_notation">caret notation</a> and is used to represent non-printable control characters in ASCII. That explains the caret, but why the bracket? Interestingly, the bracket, by default, can be used as an alternative to the &#8216;escape&#8217; key in Vim, <code>h: i-ctrl-[</code>. The reason for the bracket has to do with <a href="http://en.wikipedia.org/wiki/Control_character#How_control_characters_map_to_keyboards">how control characters are mapped on keyboards</a>. As stated in the article, control characters are rendered by the ASCII value of the non-printable character plus 64. In this case the &#8216;escape&#8217; key has the <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_control_characters">ASCII value of 27</a>. Adding 64 to this value gives us the decimal value of 91, which is <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">represented by the bracket, &#8216;[&#8217;</a>. And that is why the &#8216;escape&#8217; was rendered as <code>^[</code> in the macro. <code>h: key-notation</code> contains a table detailing how many non-printable characters can be rendered in Vim.</p>
-
-<p>The follow up question to this would be, &#8220;if I were to create the macro myself how would I type <code>^[</code>?&#8221; If the caret key was literally used then it would instruct Vim to move to the &#8220;first non-blank character of the line&#8221;, <code>:h ^</code>. Not our desired outcome. To type an &#8216;escape&#8217; it is necessary to use &#8216;ctrl-v&#8217;, which will &#8220;insert next non-digit literally&#8221;, <code>:h i_ctrl-v</code>. So to use an &#8216;escape&#8217; in a macro being created manually type: &#8216;ctrl-v&#8217; followed by &#8216;escape&#8217;.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/13/examining-the-contents-of-a-macro/">Examining the Contents of a Macro</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -562,141 +438,40 @@
   
 
 
-<time datetime="2013-02-13T15:42:00-08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Macros are a breeze in Vim! But often I make a mistake while recording the macro, undo my change and repeat. Hopefully I get it right the next time, but I&#8217;d rather not look at the statistics. It turns out the registers Vim stores macros in are the same set of registers used for other operations. What this means is that I can <code>put</code> the contents of the register, modify it and then <code>yank</code> it back in. Let&#8217;s say I had the following list of names:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>John Smith
-</span><span class='line'>Joe Smith
-</span><span class='line'>Bob Smith
-</span><span class='line'>Mike Smith
-</span><span class='line'>Juan Carlos
-</span><span class='line'>Jane Smith
-</span><span class='line'>Mike Jones
-</span><span class='line'>David Smith
-</span><span class='line'>Sarah Smith
-</span><span class='line'>James Smith</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And I want to swap the first name and last name. There are many ways to do this but using a macro one may write:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'>^dwA ^[pxj
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I can read these commands into register <code>a</code> by yanking the line like so, <code>"ay$</code>. Now I can use it as a macro to swap the names, <code>10@a</code>. Voilà!</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'>Smith John
-</span><span class='line'>Smith Joe
-</span><span class='line'>Smith Bob
-</span><span class='line'>Smith Mike
-</span><span class='line'>Carlos Juan
-</span><span class='line'>Smith Jane
-</span><span class='line'>Jones Mike
-</span><span class='line'>Smith David
-</span><span class='line'>Smith Sarah
-</span><span class='line'>Smith James
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To always make this macro avaiable I can save it in my <code>.vimrc</code>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="k">let</span> @<span class="k">a</span><span class="p">=</span><span class="s1">&#39;^dwA ^[pxj&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-02-25T13:29:00-08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/11/reversing-a-file-in-vim/">Reversing a File in Vim</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/c-/'>c#</a>, <a class='category' href='/blog/categories/mocking/'>mocking</a>, <a class='category' href='/blog/categories/tests/'>tests</a>
+  
+</span>
 
 
-<time datetime="2013-02-11T14:30:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Digging through the Vim help docs <code>:h usr_12.txt</code> I came across the topic &#8216;Reverse line order&#8217;, <code>h 12.1</code>. Sounds interesting. The command is:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span>global<span class="sr">/^/</span><span class="k">m</span> <span class="m">0</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>While familar with <code>:global</code> the rest of the command was mysterious. The documentation did a good job breaking this down. <code>^</code> will match the beginning of every line. <code>m 0</code> will <code>:move</code> the line below the line number specified; in other words move the current line to the first line of the file. Line &#8216;0&#8217; is called the &#8216;mythical zeroth line&#8217;, according to the docs. The same came be done with a range using marks:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="s1">&#39;t+1,.g/^/m &#39;</span><span class="k">t</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>`
-Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and the current line will be reversed.</p>
-
-<p><code>:move</code> was also new to me, although straight forward. It&#8217;s compliment, <code>:copy</code>, it also worth noting here, also defined as <code>:t</code>.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ciwchris.github.com/blog/2013/02/25/mocking-with-moq/" data-via="" data-counturl="http://ciwchris.github.com/blog/2013/02/25/mocking-with-moq/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/02/16/entering-escape-in-insert-mode/" title="Previous Post: Entering escape in insert mode">&laquo; Entering escape in insert mode</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/02/25/the-reasonable-expectations-of-your-cto/" title="Next Post: The Reasonable Expectations of Your CTO">The Reasonable Expectations of Your CTO &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -733,6 +508,7 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
 
   
 </aside>
+
 
     </div>
   </div>
