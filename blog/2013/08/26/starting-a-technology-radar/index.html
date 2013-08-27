@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Reversing a file in vim - Notes to Self</title>
+  <title>starting_a_technology_radar - Notes to Self</title>
   <meta name="author" content="Chris">
 
   
-  <meta name="description" content="Digging through the Vim help docs :h usr_12.txt I came across the topic &#8216;Reverse line order&#8217;, h 12.1. Sounds interesting. The command is &hellip;">
+  <meta name="description" content="I became intrigued by the idea of creating a Technology Radar while listening to Neal Ford on the Relevance Podcast. Initially the plan was to create &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/">
+  <link rel="canonical" href="http://ciwchris.github.com/blog/2013/08/26/starting-a-technology-radar/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
    <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -66,7 +66,7 @@
   
   <header>
     
-      <h1 class="entry-title">Reversing a File in Vim</h1>
+      <h1 class="entry-title">Starting_a_technology_radar</h1>
     
     
       <p class="meta">
@@ -82,31 +82,19 @@
   
 
 
-<time datetime="2013-02-11T14:30:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
+<time datetime="2013-08-26T18:26:00-07:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Digging through the Vim help docs <code>:h usr_12.txt</code> I came across the topic &#8216;Reverse line order&#8217;, <code>h 12.1</code>. Sounds interesting. The command is:</p>
+<div class="entry-content"><p>I became intrigued by the idea of creating a <a href="http://www.thoughtworks.com/radar">Technology Radar</a> while listening to <a href="nealford.com">Neal Ford</a> on the <a href="http://thinkrelevance.com/blog/2013/07/26/neal-ford-of-thoughtworks-episode-036">Relevance Podcast</a>. Initially the plan was to <a href="http://nealford.com/memeagora/2013/05/28/build_your_own_technology_radar.html">create a radar</a> for our department at work. My thinking was that it would give focus to developers, which technology to concentrate on and which should be used in projects, as well as give visibility as to what directions developers are exploring, and therefore what may start appearing in projects. It would also give management a good visual, and explanation if we did a write up, as to what we are using and where we are heading. It&#8217;s questionable whether any action will be taken to create one but after reading the section on creating a <em>Personal Radar</em> I became motivated to create my own.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span>global<span class="sr">/^/</span><span class="k">m</span> <span class="m">0</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>Why did I create my own radar? I consume information from a variety of sources. As a result I&#8217;m exposed to many interesting topics and ideas. I&#8217;ve come to realize it is too many. I tend to find one interesting topic, begin to pursue it only to be interrupted by the next interesting thing to come my way. In the end I have an awareness of many things but have learned none. I therefore concluded that I needed to focus on a small number of items, but still allow myself to be exposed to other items as well. I decided a <em>Personal Radar</em> may help me do just that. Each quarter, or perhaps twice a year, I will update a personal radar. The items I focus on will be selected from the radar. When I produce the next radar then I will select a new set of items to focus on. My hope is that I may become disciplined and learn an item more in-depth before moving on to the next interesting thing. So without further delay, below is my personal radar, probably for the remainder of the year, and explanation text, a work in progress.</p>
 
-
-<p>While familar with <code>:global</code> the rest of the command was mysterious. The documentation did a good job breaking this down. <code>^</code> will match the beginning of every line. <code>m 0</code> will <code>:move</code> the line below the line number specified; in other words move the current line to the first line of the file. Line &#8216;0&#8217; is called the &#8216;mythical zeroth line&#8217;, according to the docs. The same came be done with a range using marks:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="s1">&#39;t+1,.g/^/m &#39;</span><span class="k">t</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>`
-Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and the current line will be reversed.</p>
-
-<p><code>:move</code> was also new to me, although straight forward. It&#8217;s compliment, <code>:copy</code>, it also worth noting here, also defined as <code>:t</code>.</p>
+<p><a href="/technology-radar/technology-radar.html">Personal Radar</a><br/>
+<a href="/technology-radar/explanation.html">Radar Explanation</a></p>
 </div>
 
 
@@ -129,12 +117,12 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
   
 
 
-<time datetime="2013-02-11T14:30:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2013</time>
+<time datetime="2013-08-26T18:26:00-07:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/vim/'>vim</a>
+    <a class='category' href='/blog/categories/techradar/'>techradar</a>
   
 </span>
 
@@ -143,7 +131,7 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/" data-via="" data-counturl="http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ciwchris.github.com/blog/2013/08/26/starting-a-technology-radar/" data-via="" data-counturl="http://ciwchris.github.com/blog/2013/08/26/starting-a-technology-radar/" >Tweet</a>
   
   
   
@@ -152,8 +140,8 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/03/04/mocking-with-moq/" title="Previous Post: Mocking With Moq">&laquo; Mocking With Moq</a>
       
-        <a class="basic-alignment right" href="/blog/2013/02/13/examining-the-contents-of-a-macro/" title="Next Post: examining the contents of a macro">examining the contents of a macro &raquo;</a>
       
     </p>
   </footer>
