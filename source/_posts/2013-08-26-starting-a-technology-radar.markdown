@@ -4,7 +4,7 @@ title: "starting_a_technology_radar"
 date: 2013-08-26 18:26
 comments: false
 categories: techradar
-published: false
+published: true
 ---
 I became intrigued by the idea of creating a [Technology Radar](http://www.thoughtworks.com/radar) while listening to [Neal Ford](nealford.com) on the [Relevance Podcast](http://thinkrelevance.com/blog/2013/07/26/neal-ford-of-thoughtworks-episode-036). Initially the plan was to [create a radar](http://nealford.com/memeagora/2013/05/28/build_your_own_technology_radar.html) for our department at work. My thinking was that it would give focus to developers, which technology to concentrate on and which should be used in projects, as well as give visibility as to what directions developers are exploring, and therefore what may start appearing in projects. It would also give management a good visual, and explanation if we did a write up, as to what we are using and where we are heading. It's questionable whether any action will be taken to create one but after reading the section on creating a *Personal Radar* I became motivated to create my own.
 
