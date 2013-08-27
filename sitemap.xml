@@ -2,40 +2,48 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://ciwchris.github.com/blog/2013/02/11/reversing-a-file-in-vim/</loc>
-        <lastmod>2013-02-11T15:42:52-08:00</lastmod>
+        <lastmod>2013-04-07T21:12:47-07:00</lastmod>
     </url>
     <url>
         <loc>http://ciwchris.github.com/blog/2013/02/13/examining-the-contents-of-a-macro/</loc>
-        <lastmod>2013-02-16T12:29:41-08:00</lastmod>
+        <lastmod>2013-04-07T21:11:40-07:00</lastmod>
     </url>
     <url>
         <loc>http://ciwchris.github.com/blog/2013/02/16/entering-escape-in-insert-mode/</loc>
-        <lastmod>2013-02-16T12:25:29-08:00</lastmod>
+        <lastmod>2013-04-07T21:10:56-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://ciwchris.github.com/blog/2013/02/25/the-reasonable-expectations-of-your-cto/
         </loc>
-        <lastmod>2013-02-26T20:03:44-08:00</lastmod>
+        <lastmod>2013-04-07T20:31:56-07:00</lastmod>
     </url>
     <url>
         <loc>http://ciwchris.github.com/blog/2013/03/04/mocking-with-moq/</loc>
-        <lastmod>2013-03-04T21:48:56-08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ciwchris.github.com/blog/archives/</loc>
-        <lastmod>2013-03-04T21:48:56-08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ciwchris.github.com/pedigree/lopes.html</loc>
-        <lastmod>2013-03-04T21:51:17-08:00</lastmod>
+        <lastmod>2013-04-07T20:31:56-07:00</lastmod>
     </url>
     <url>
         <loc>http://ciwchris.github.com/archives/</loc>
-        <lastmod>2013-03-04T21:48:56-08:00</lastmod>
+        <lastmod>2013-04-07T21:12:47-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ciwchris.github.com/blog/archives/</loc>
+        <lastmod>2013-04-07T21:12:47-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ciwchris.github.com/pedigree/lopes.html</loc>
+        <lastmod>2013-04-07T20:31:56-07:00</lastmod>
     </url>
     <url>
         <loc>http://ciwchris.github.com/</loc>
-        <lastmod>2013-03-04T21:48:56-08:00</lastmod>
+        <lastmod>2013-04-07T21:12:47-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ciwchris.github.com/technology-radar/explanation.html</loc>
+        <lastmod>2013-08-26T17:02:58-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ciwchris.github.com/technology-radar/technology-radar.html</loc>
+        <lastmod>2013-08-26T18:23:38-07:00</lastmod>
     </url>
 </urlset>
