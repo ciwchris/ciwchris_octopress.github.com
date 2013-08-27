@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Technology Radar Explanation"
+date: 2013-08-26 16:35
+comments: true
+sharing: true
+footer: true
+---
+## Purpose ##
+- Why it's on the radar?
+- Why it was assigned its current status?
+- What is going to be done about it between now and the next radar period?
+- Where will it be the next radar radar period?
+
+### Techniques ###
+- Continuous deployment: Releases are large and risky. A single feature me be dragged down be other features which cause a lengthy delay between when a request comes in and it is deployed to the user. Continuous deployment would cut down the risk of what is changing between deployments and give the user what they want much quicker. These is appears to be a beneficial technique but buy off is needed are there are risks. We don't have a process currently in place to allow us to understand features accurately nor do we have automated tests setup to verify previous functionality. Therefore a complete regression test should be made before each deployment, currently. Initial exploration should be made to determine what risks can be reduced be including comprehensive tests which are run in automated builds. I don't foresee any movement within the next radar.
+
+- Done: During planning tasks are written for stories and are accomplished over the course of the iteration. But other tasks may be discovered during work. Also, the other tasks, such a testing, are not often considered when answering the question if a story is ready. As a result, often a item is considered finished and focus shifts elsewhere when in fact we never completed the original work which leads to bugs and defects; a product delivered to the user which does not function as originally requested. Therefore, we should only accept a story as complete when a list of things can be said about it: 
+Requirements written, coded, has some tests written, they are passing and are being exercised in a build, test report is accessible, can be deployed through the build system without intervention, has be signed off be QA and the changes have been captured in release notes. This is an item which can be improved immediately. A subset of the list can be selected and the story's status can only be considered done what is satisfies the items on this list. It will remain in trial status until a satisfactory definition of done is determined and can be met successfully during development.
+
+- Acceptance driven development: Project requests are received without a firm understanding of what is being requested. Work begins, in spite of this, and testing occurs and understanding about the request is still hazy. Acceptance tests will force us to firmly write out what will be implemented. This understanding can then be shared amongst all parties. Also, these tests can be continuously run to verify new functionality development is not lost without having to perform a complete regression test. This will give the developer, as well as everyone else, better peace of mind when changes are made to a project. Specifications can start being written in this fashion immediately, but there will be initial difficulty structuring these specifications in such a fashion that they can most naturally be made use of within a acceptance testing framework. Therefore an initial trial of this process can be tried this period and then enhanced the next period.
+
+- Database migrations: Changes to the database can be difficult to track, especially when several people are making changes to the database. It then needs to be determined what changes need to be made to the database during a deployment. Managing this be hand is time consuming an error prone. Therefore changes to a database should be made through a migration system and ran during deployments, or a script generated for production deployments. A migration system can be made use of immediately. It will take further coordination to run migrations in builds though. Once used during application development this item can be assessed, improvement made and then determined if should be adopted. Potentially this could be adopted as a practice beginning next period.
+
+- Vertical slice testing: Unit testing tends to be rigid, forcing lots of modifications when a change to the application is made. Often this mean the tests are abandoned, any usefulness they had are lost and the developer loses confidence in writing any tests to begin with. Therefore testing should be performed in slice instead. All of the layers of the application can be tested together. Any dependencies can be replace by in-memory versions so that tests run time remains low. Since layers are tested together the risk of test rework needing to be done when modifications are made are lower and are simpler. This item should be explored further, incorporating it within acceptance tests. Either this practice can be adopted while adopting acceptance tests or acceptance tests should be adopted before this item is tried.
+
