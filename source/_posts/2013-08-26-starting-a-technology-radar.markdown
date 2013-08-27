@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "starting_a_technology_radar"
+title: "Starting a Technology Radar"
 date: 2013-08-26 18:26
 comments: false
 categories: techradar
