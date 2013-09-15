@@ -9,7 +9,10 @@
   <meta name="author" content="Chris">
 
   
-  <meta name="description" content="I became intrigued by the idea of creating a Technology Radar while listening to Neal Ford on the Relevance Podcast. Initially the plan was to create &hellip;">
+  <meta name="description" content="Notes from the Pluralsight course Introduction to the Bash Shell on Mac OS and Linux Braces 1
+ls file?{mine,yours}.{txt,png} Commands 1
+2
+grep 1978 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +66,214 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/14/bash-shell-basics/">Bash Shell Basics</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-14T18:53:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Notes from the Pluralsight course <a href="http://pluralsight.com/training/Courses/TableOfContents/introduction-bash-shell-linux-mac-os">Introduction to the Bash Shell on Mac OS and Linux</a></p>
+
+<h2>Braces</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ls file?{mine,yours}.{txt,png}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Commands</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>grep 1978 oscars.tsv | sort &gt; 1978_films.txt
+</span><span class='line'>cut -f 3 oscars.tsv | grep 4 | wc -l</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Sort second column as numbers in reverse order</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sort -rnk2 math_grades</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Unique entries with their count</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sort math_attendance | uniq -c | sort -nr</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Find the largest file in the directory</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ls -lS | head -n 2 | tail -n 1
+</span><span class='line'>ls -lrS | tail -n 2 # Better way</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Don&#8217;t exit but update as new entries come in</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tail -f auth.log</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Number of files in a directory</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ls -a | wc -l</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Search for bruce, case insensitive, in a set of files</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>grep -i bruce *grades</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Filter out using an extended regex before working with other content</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>grep -Ev "^$|lecture" math_attendance | sort | uniq -c | sort -nr</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Search for txt files with curious in them</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>find . -name '*.txt' -exec grep -l curious {} \;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Change uppercase &#8216;S&#8217; to lowercase &#8216;s&#8217;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cat physics_grades | tr S s 
+</span><span class='line'>tr S s &lt; physics_grades # More efficient method</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Change from tab separated to semicolon separated</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tr \\t \; &lt; oscars.tsv &gt; oscars.csv</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Using sed</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sed 's/something/something new/g' one.txt &gt; two.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Combine files using columns (not append)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>paste *grades
+</span><span class='line'>join *grades # Using keys</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Command Substitution</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "hello `whoami`" #old form
+</span><span class='line'>echo "Buy milk" &gt; "notes$(date).txt"</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Copy / Paste</h2>
+
+<p>Select text and paste with middle mouse click</p>
+
+<h2>Movement keys</h2>
+
+<ul>
+<li>ctrl-a: start of line</li>
+<li>ctrl-e: end of line</li>
+<li>ctrl-f: forward 1 char</li>
+<li>ctrl-b: backward 1 char</li>
+<li>alt-f: forward 1 word</li>
+<li>alt-b: backward 1 word</li>
+<li>ctrl-d: delete 1 char</li>
+<li>ctrl-h: delete 1 char backward</li>
+<li>alt-d: delete 1 word</li>
+<li>ctrl-w: delete 1 word backward</li>
+<li>ctrl-k: delete rest of line</li>
+<li>ctrl-u: delete from start of line</li>
+<li>ctrl-r: search back in history</li>
+</ul>
+
+
+<h2>Processes</h2>
+
+<ul>
+<li>C-z: stop and return to a command prompt
+
+<ul>
+<li>fg or bg to start the process again</li>
+<li>or use the job id: fg %1</li>
+</ul>
+</li>
+<li>jobs: to list the running jobs</li>
+<li>kill %1: kill job 1</li>
+<li>or by process id
+
+<ul>
+<li>ps -ef: list all processes and show the owner</li>
+<li>kill 1234</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Customization</h2>
+
+<ul>
+<li>alias: view aliases</li>
+<li>\ls: run normal command, not the alias for it</li>
+<li>.bashrc: executed for non-login shells</li>
+<li>.profile or .bash_profile: executed for login shells</li>
+<li>echo $PS1: reading an environment variable</li>
+<li>PS1=&#8221;\h:\W /u&#8221;: set an environment variable</li>
+<li>env: list all environment variables</li>
+<li>EDITOR=vim: set the editor</li>
+<li>export EDITOR: to make it visible
+
+<ul>
+<li>or export EDITOR=vim</li>
+</ul>
+</li>
+<li>chsh: change shell
+
+<ul>
+<li>\bin\zsh: change to using zsh</li>
+</ul>
+</li>
+<li>echo $SHELL: view current shell</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -745,6 +956,10 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/14/bash-shell-basics/">Bash Shell Basics</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/26/starting-a-technology-radar/">Starting a Technology Radar</a>
       </li>
     
@@ -758,10 +973,6 @@ Here, assuming mark &#8216;t&#8217; has been set, then all lines between it and 
     
       <li class="post">
         <a href="/blog/2013/02/16/entering-escape-in-insert-mode/">Entering escape in insert mode</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/13/examining-the-contents-of-a-macro/">examining the contents of a macro</a>
       </li>
     
   </ul>
