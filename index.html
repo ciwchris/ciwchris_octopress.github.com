@@ -99,102 +99,117 @@ grep 1978 &hellip;">
 
 <h2>Braces</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ls file?{mine,yours}.{txt,png}</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ls file?<span class="o">{</span>mine,yours<span class="o">}</span>.<span class="o">{</span>txt,png<span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Commands</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>grep 1978 oscars.tsv | sort &gt; 1978_films.txt
-</span><span class='line'>cut -f 3 oscars.tsv | grep 4 | wc -l</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>grep 1978 oscars.tsv | sort &gt; 1978_films.txt
+</span><span class='line'>cut -f 3 oscars.tsv | grep 4 | wc -l
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Sort second column as numbers in reverse order</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sort -rnk2 math_grades</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Unique entries with their count</p>
+<figure class='code'><figcaption><span>Sort second column as numbers in reverse order</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sort -rnk2 math_grades
+</span></code></pre></td></tr></table></div></figure>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sort math_attendance | uniq -c | sort -nr</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Find the largest file in the directory</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Unique entries with their count</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sort math_attendance | uniq -c | sort -nr
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Find the largest file in the directory</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ls -lS | head -n 2 | tail -n 1
-</span><span class='line'>ls -lrS | tail -n 2 # Better way</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ls -lS | head -n 2 | tail -n 1
+</span><span class='line'>ls -lrS | tail -n 2 <span class="c"># Better way</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Don&#8217;t exit but update as new entries come in</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tail -f auth.log</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Number of files in a directory</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ls -a | wc -l</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Search for bruce, case insensitive, in a set of files</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>grep -i bruce *grades</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span>Don&#8217;t exit but update as new entries come in</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>tail -f auth.log
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Filter out using an extended regex before working with other content</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>grep -Ev "^$|lecture" math_attendance | sort | uniq -c | sort -nr</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Search for txt files with curious in them</p>
+<figure class='code'><figcaption><span>Number of files in a directory</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ls -a | wc -l
+</span></code></pre></td></tr></table></div></figure>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>find . -name '*.txt' -exec grep -l curious {} \;</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Change uppercase &#8216;S&#8217; to lowercase &#8216;s&#8217;</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Search for bruce, case insensitive, in a set of files</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>grep -i bruce *grades
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Filter out using an extended regex before working with other content</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>grep -Ev <span class="s2">&quot;^$|lecture&quot;</span> math_attendance | sort | uniq -c | sort -nr
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Search for txt files with curious in them</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>find . -name <span class="s1">&#39;*.txt&#39;</span> -exec grep -l curious <span class="o">{}</span> <span class="se">\;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Change uppercase &#8216;S&#8217; to lowercase &#8216;s&#8217;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cat physics_grades | tr S s 
-</span><span class='line'>tr S s &lt; physics_grades # More efficient method</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>cat physics_grades | tr S s
+</span><span class='line'>tr S s &lt; physics_grades <span class="c"># More efficient method</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Change from tab separated to semicolon separated</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tr \\t \; &lt; oscars.tsv &gt; oscars.csv</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Using sed</p>
+<figure class='code'><figcaption><span>Change from tab separated to semicolon separated</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>tr <span class="se">\\</span>t <span class="se">\;</span> &lt; oscars.tsv &gt; oscars.csv
+</span></code></pre></td></tr></table></div></figure>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sed 's/something/something new/g' one.txt &gt; two.txt</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Combine files using columns (not append)</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Using sed</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sed <span class="s1">&#39;s/something/something new/g&#39;</span> one.txt &gt; two.txt
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Combine files using columns (not append)</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>paste *grades
-</span><span class='line'>join *grades # Using keys</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>paste *grades
+</span><span class='line'>join *grades <span class="c"># Using keys</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Command Substitution</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo "hello `whoami`" #old form
-</span><span class='line'>echo "Buy milk" &gt; "notes$(date).txt"</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">echo</span> <span class="s2">&quot;hello `whoami`&quot;</span> <span class="c">#old form</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;Buy milk&quot;</span> &gt; <span class="s2">&quot;notes$(date).txt&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Copy / Paste</h2>

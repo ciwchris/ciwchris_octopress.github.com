@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cli | Notes to Self]]></title>
   <link href="http://ciwchris.github.com/blog/categories/cli/atom.xml" rel="self"/>
   <link href="http://ciwchris.github.com/"/>
-  <updated>2013-09-14T19:25:07-07:00</updated>
+  <updated>2013-09-14T19:31:50-07:00</updated>
   <id>http://ciwchris.github.com/</id>
   <author>
     <name><![CDATA[Chris]]></name>
@@ -22,83 +22,71 @@
 
 <h2>Braces</h2>
 
-<p><code>
+<p><code>bash
 ls file?{mine,yours}.{txt,png}
 </code></p>
 
 <h2>Commands</h2>
 
-<p><code>
+<p><code>bash
 grep 1978 oscars.tsv | sort &gt; 1978_films.txt
 cut -f 3 oscars.tsv | grep 4 | wc -l
 </code></p>
 
-<p>Sort second column as numbers in reverse order
-<code>
+<p><code>bash Sort second column as numbers in reverse order
 sort -rnk2 math_grades
 </code></p>
 
-<p>Unique entries with their count
-<code>
+<p><code>bash Unique entries with their count
 sort math_attendance | uniq -c | sort -nr
 </code></p>
 
-<p>Find the largest file in the directory
-<code>
+<p><code>bash Find the largest file in the directory
 ls -lS | head -n 2 | tail -n 1
 ls -lrS | tail -n 2 # Better way
 </code></p>
 
-<p>Don't exit but update as new entries come in
-<code>
+<p><code>bash Don't exit but update as new entries come in
 tail -f auth.log
 </code></p>
 
-<p>Number of files in a directory
-<code>
+<p><code>bash Number of files in a directory
 ls -a | wc -l
 </code></p>
 
-<p>Search for bruce, case insensitive, in a set of files
-<code>
+<p><code>bash Search for bruce, case insensitive, in a set of files
 grep -i bruce *grades
 </code></p>
 
-<p>Filter out using an extended regex before working with other content
-<code>
+<p><code>bash Filter out using an extended regex before working with other content
 grep -Ev "^$|lecture" math_attendance | sort | uniq -c | sort -nr
 </code></p>
 
-<p>Search for txt files with curious in them
-<code>
+<p><code>bash Search for txt files with curious in them
 find . -name '*.txt' -exec grep -l curious {} \;
 </code></p>
 
-<p>Change uppercase 'S' to lowercase 's'
-<code>
+<p><code>bash Change uppercase 'S' to lowercase 's'
 cat physics_grades | tr S s
 tr S s &lt; physics_grades # More efficient method
 </code></p>
 
-<p>Change from tab separated to semicolon separated
-<code>
+<p><code>bash Change from tab separated to semicolon separated
 tr \\t \; &lt; oscars.tsv &gt; oscars.csv
 </code></p>
 
-<p>Using sed
-<code>
+<p><code>bash Using sed
 sed 's/something/something new/g' one.txt &gt; two.txt
 </code></p>
 
-<p>Combine files using columns (not append)
-<code>
+<p><code>bash Combine files using columns (not append)
 paste *grades
 join *grades # Using keys
 </code></p>
 
 <h2>Command Substitution</h2>
 
-<p><code>
+<p><code>bash
 echo "hello `whoami`" #old form
 echo "Buy milk" &gt; "notes$(date).txt"
 </code></p>
